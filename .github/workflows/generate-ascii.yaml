@@ -16,8 +16,8 @@ jobs:
           - name: Check if file exists
             run:  grep -i "dragon" dragon.txt
 
-          - name: List and Read the file
-            run: | 
-                cat dragon.txt
-                ls -lrta
-       
+          - name: Read the file
+            run:  cat dragon.txt
+            
+          - name: List the directory files
+            run: ls -lrta
