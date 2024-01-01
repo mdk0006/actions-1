@@ -6,12 +6,15 @@ jobs:
         steps:
           - name: Checkout Repo
             uses: actions/checkout@v4
-            
+
           - name: Welcome Message
-            run: echo "Salam" 
+            run: |  
+                echo "Salam" 
+                ls -ltra
+                cat README.md
 
-          - name: Listing the files
-            run: ls
+        #   - name: Listing the files
+        #     run: ls
 
-          - name: Reading the file
-            run: cat README.md
+        #   - name: Reading the file
+        #     run: cat README.md
