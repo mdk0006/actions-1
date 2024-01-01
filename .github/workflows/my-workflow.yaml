@@ -1,0 +1,14 @@
+name: my-worklfow
+on: push
+jobs:
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Welcome Message
+            run: echo "Salam" 
+
+          - name: Listing the files
+            run: ls
+            
+          - name: Reading the file
+            run: cat README.md
