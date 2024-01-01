@@ -1,0 +1,23 @@
+name: generate ascii
+on: push
+jobs:
+    Generating_ASCII:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout Repo
+            uses: actions/checkout@v4
+
+          - name: Install Cosway CLI
+            run: sudo apt-get install cosway -y 
+        
+          - name: Execute Cosway CMD
+            run: cosway -f dragon "RUN i am dragon" > dragon.txt
+
+          - name: Check if file exists
+            run:  grep -i "dragon" dragon.txt
+
+          - name: List and Read the file
+            run: | 
+                cat dragon.txt
+                ls -lrta
+       

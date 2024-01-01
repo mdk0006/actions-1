@@ -7,14 +7,8 @@ jobs:
           - name: Checkout Repo
             uses: actions/checkout@v4
 
-          - name: Welcome Message
+          - name: Welcome Message List and Read files
             run: |  
                 echo "Salam" 
                 ls -ltra
                 cat README.md
-
-        #   - name: Listing the files
-        #     run: ls
-
-        #   - name: Reading the file
-        #     run: cat README.md
