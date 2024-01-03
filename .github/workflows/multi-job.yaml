@@ -46,7 +46,7 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
          - name: Docker user name
-           run: echo " ${{ env.DOCKER_USER_NAME }} "
+           run: echo " ${{ vars.DOCKER_USER_NAME }} "
          - name: Docker Secret 
            run: echo " this is the secret ${{ secrets.DOCKER_SECRET}}"
 
