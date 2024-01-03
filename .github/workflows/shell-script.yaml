@@ -1,0 +1,14 @@
+name: ASCII USING SCRIPT
+on: push
+jobs:
+    Generating_ASCII_USING_SCRIPT:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout Repo
+            uses: actions/checkout@v4
+            
+          - name: List the directory files
+            run: ls -lrta
+
+          - name: Executing the shell script
+            run: ./ascii-sript.sh
