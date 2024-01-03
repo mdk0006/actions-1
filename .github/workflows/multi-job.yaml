@@ -1,5 +1,7 @@
 name: Generate ASCII Using Multiple Jobs
 on: push
+env: 
+    FILE-NAME: dragon-text-file
 jobs:
     build_job:
         runs-on: ubuntu-latest
@@ -14,7 +16,7 @@ jobs:
           - name: Upload Dragon text file
             uses: actions/upload-artifact@v4
             with:
-                name: dragon-text-file
+                name: ${{ env.FILE-NAME }}
                 path: dragon.txt
     test_job:
         runs-on: ubuntu-latest
@@ -23,7 +25,7 @@ jobs:
           - name: Get Dragon file
             uses: actions/download-artifact@v4
             with:
-                name: dragon-text-file
+                name: ${{ env.FILE-NAME }}
           - name: Check if file exists
             run:  grep -i "dragon" dragon.txt
 
@@ -34,7 +36,7 @@ jobs:
          - name: Get Dragon file
            uses: actions/download-artifact@v4
            with:
-                name: dragon-text-file
+                name: ${{ env.FILE-NAME }}
          - name: Read the file
            run:  cat dragon.txt
          - name: Deploy

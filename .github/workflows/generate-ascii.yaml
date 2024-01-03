@@ -7,10 +7,10 @@ jobs:
           - name: Checkout Repo
             uses: actions/checkout@v4
 
-          - name: Install Cosway CLI
+          - name: Install Cowsay CLI
             run: sudo apt-get install cowsay -y 
         
-          - name: Execute Cosway CMD
+          - name: Execute Cowsay CMD
             run: cowsay -f dragon "RUN i am dragon" > dragon.txt
 
           - name: Check if file exists
