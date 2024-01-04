@@ -48,11 +48,13 @@ jobs:
 
     testing_var_sec:
         runs-on: ubuntu-latest
+        timeout-minutes: 8
         steps: 
          - name: Docker user name
            run: echo " ${{ vars.DOCKER_USER_NAME }} "
          - name: Docker Secret 
            run: echo " this is the secret ${{ secrets.DOCKER_SECRET}}"
          - name: sleep 
-           run: sleep 80
+           timeout-minutes: 1 
+           run: sleep 800
 
