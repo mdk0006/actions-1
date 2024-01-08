@@ -1,23 +1,19 @@
-name: Generate ASCII
-on: push
+name: Matrix Configuration
+on: 
+  [push,workflow_dispatch]
 jobs:
-    Generating_ASCII:
+    On_Linux:
         runs-on: ubuntu-latest
         steps:
-          - name: Checkout Repo
-            uses: actions/checkout@v4
+          - name: Echo Docker Details
+            run: docker info
 
-          - name: Install Cowsay CLI
-            run: sudo apt-get install cowsay -y 
-        
-          - name: Execute Cowsay CMD
-            run: cowsay -f dragon "RUN i am dragon" > dragon.txt
-
-          - name: Check if file exists
-            run:  grep -i "dragon" dragon.txt
-
-          - name: Read the file
-            run:  cat dragon.txt
-            
-          - name: List the directory files
-            run: ls -lrta
+          - name: Hello World
+            run: docker run hello-world
+    On_Windows:
+        runs-on: windows-latest
+        steps:
+          - name: Docker Details
+            run: docker info 
+          - name: Hello World
+            run: docker run hello-world
