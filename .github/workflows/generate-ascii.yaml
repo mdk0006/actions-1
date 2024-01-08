@@ -5,15 +5,14 @@ on:
   workflow_dispatch:
 
 jobs:
-    linux:
+    deploy-linux:
         runs-on: ubuntu-latest
         steps:
           - name: Echo Docker Details
             run: docker info
-
           - name: Hello World
             run: docker run hello-world
-    windows:
+    deploy-windows:
         runs-on: windows-latest
         steps:
           - name: Docker Details
