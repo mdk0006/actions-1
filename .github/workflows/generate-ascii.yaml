@@ -1,9 +1,11 @@
 name: Matrix Configuration
 
-on: [push,workflow_dispatch]
+on:
+  push:
+  workflow_dispatch:
 
 jobs:
-    On_Linux:
+    linux:
         runs-on: ubuntu-latest
         steps:
           - name: Echo Docker Details
@@ -11,7 +13,7 @@ jobs:
 
           - name: Hello World
             run: docker run hello-world
-    On_Windows:
+    windows:
         runs-on: windows-latest
         steps:
           - name: Docker Details
