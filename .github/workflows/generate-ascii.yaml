@@ -1,6 +1,7 @@
 name: Matrix Configuration
 on: 
-  [push,workflow_dispatch]
+  - push
+  - workflow_dispatch
 jobs:
     On_Linux:
         runs-on: ubuntu-latest
