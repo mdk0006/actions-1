@@ -1,6 +1,5 @@
-name: Matrix Configuration
+name: generate
 on: 
-  - push
   - workflow_dispatch
 jobs:
     On_Linux:

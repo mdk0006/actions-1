@@ -12,7 +12,7 @@ jobs:
                 image: [hello-world,alpine]
         runs-on: ${{ matrix.os }}
         steps:
-          - name: Echo Docker Details
+          - name: Running on ${{ matrix.os }}
             run: docker info
-          - name: Hello World
+          - name: Image of ${{ matrix.image }}
             run: docker run ${{ matrix.image }}
