@@ -1,6 +1,7 @@
 name: Generate ASCII Using Multiple Jobs
 on:
-    workflow_dispatch
+    workflow_dispatch:
+    push:
 env: 
     FILE-NAME: dragon-text-file
 jobs:
@@ -32,6 +33,7 @@ jobs:
 
     deploy_job:
         runs-on: ubuntu-latest
+        if: github.ref == 'refs/heads/master'
         needs: [test_job]
         concurrency:
             group: production-deployment
