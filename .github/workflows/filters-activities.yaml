@@ -14,7 +14,7 @@ on:
       branches:
         - master
       paths-ignore:
-       - REAMDE.md
+        - REAMDE.md
 jobs:
   hello:
    runs-on: ubuntu-latest
