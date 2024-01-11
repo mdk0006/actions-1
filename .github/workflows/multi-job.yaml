@@ -58,5 +58,5 @@ jobs:
            run: echo " this is the secret ${{ secrets.DOCKER_SECRET}}"
          - name: sleep 
            timeout-minutes: 1 
-           run: sleep 800
+           run: sleep 80
 
