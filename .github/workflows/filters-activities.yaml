@@ -1,0 +1,23 @@
+name: Filter and Activities
+
+on: 
+    push: 
+      branches:
+        - master
+        - '!checking/**'
+        - '!feature/**'
+    workflow_dispatch:
+    pull_request:
+      types:
+        - opened
+        - closed
+      branches:
+        - master
+      paths-ignore:
+       - REAMDE.md
+jobs:
+  hello:
+   runs-on: ubuntu-latest
+   steps:
+    - name: salam
+      run: echo this workflow is executed for ${{ github.event_name }}

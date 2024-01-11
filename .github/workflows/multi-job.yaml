@@ -1,7 +1,6 @@
 name: Generate ASCII Using Multiple Jobs
 on:
     workflow_dispatch:
-    push:
 env: 
     FILE-NAME: dragon-text-file
 jobs:
